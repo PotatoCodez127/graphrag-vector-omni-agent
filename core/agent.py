@@ -97,7 +97,7 @@ async def run_autonomous_agent(user_prompt: str) -> AgentOutput:
     })
     
     # We call the model again, keeping the format constraint as a backup
-    synth_response = client.chat(
+    synth_response = await client.chat(
         model="qwen3-next:80b-cloud", 
         messages=messages,
         format=AgentOutput.model_json_schema()
