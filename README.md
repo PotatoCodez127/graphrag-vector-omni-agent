@@ -1,9 +1,10 @@
 # Omni-Agent: Enterprise Knowledge & Operations Engine
 
 ## Overview
-Omni-Agent is a production-ready, enterprise-grade AI architecture capstone project. It moves beyond simple chatbot prompts by implementing a robust, fault-tolerant, 5-phase pipeline. 
+Omni-Agent is a production-ready, enterprise-grade AI architecture using a FastAPI asynchronous gateway. It features a custom ReAct loop, Vector RAG (ChromaDB), and GraphRAG (NetworkX) with a secondary Guardrail Proxy.
 
-This microservice acts as an autonomous internal corporate assistant capable of reasoning, retrieving proprietary documents, traversing organizational structures, structuring data for frontend applications, and enforcing strict brand-safety guardrails.
+## Architectural Paradigm
+The system is built on a non-blocking asynchronous event loop to handle concurrent agentic requests without I/O bottlenecks.
 
 ## The Architecture (The 5 Phases of Enterprise AI)
 
