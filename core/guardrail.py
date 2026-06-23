@@ -2,16 +2,19 @@
 import os
 import json
 from dotenv import load_dotenv
-from ollama import Client
+from ollama import AsyncClient
 
 # Load environment variables
 load_dotenv()
 
 # Initialize Ollama Cloud Client
-client = Client(
-    host='https://ollama.com',
-    headers={'Authorization': f"Bearer {os.getenv('OLLAMA_API_KEY')}"}
-)
+async def judge_response(user_prompt: str, draft_reply: str) -> tuple[bool, str]:
+    # Await the chat call
+    response = await client.chat(
+        model="qwen3-next:80b-cloud",
+        messages=[{"role": "system", "content": judge_prompt}],
+        format="json"
+    )
 
 def judge_response(user_prompt: str, draft_reply: str) -> tuple[bool, str]:
     """
